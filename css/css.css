@@ -1,0 +1,23 @@
+.col-md-8{
+	flex-basis: auto;
+	max-width: 100%;
+}
+
+.col-md-6{
+	flex: auto;
+	max-width: 100%;
+}
+
+.sub{
+    padding-left: 5%;
+}
+
+.list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+.btn{
+	margin-left: 10%;
+}
+

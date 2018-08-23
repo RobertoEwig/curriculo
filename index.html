@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="curriculo">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Curriculum Vitae">
+    <meta name="author" content="Roberto R. Américo">
+    <link rel="icon" href="media/icone.ico">
+
+    <title>Curriculum Vitae</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/css.css" rel="stylesheet">
+
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light" ng-controller="maincontrol">
+
+    <div class="container"> 
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="media/imagen.jpg" alt="" width="116" height="154">
+        <h2>{{ curriculo.nome }}</h2>
+        <p class="lead">{{ curriculo.nacionalidade }}, {{ curriculo.status }}, {{ curriculo.idade }}</p>
+		<p class="lead">{{ curriculo.endereco }}</p>
+		<p class="lead">{{ curriculo.contato }}</p>
+		<p class="lead">{{ curriculo.email }}</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Formação Acadêmica</h4>
+            <div class="row">
+              <div class="col-md-6 mb-3" >
+                <ul ng-repeat="formacao in formacoes">
+					<li> {{formacao.Curso}} 
+						<p> {{formacao.Instituicao}}, {{ formacao.Local}} </br> {{formacao.CH}}</p>
+					</li>
+				</ul>
+              </div>
+            </div>
+			
+			</br>
+			<h4 class="mb-3">Experiências</h4>
+            <div class="mb-3">
+				<ul ng-repeat="experiencia in experiencias">
+					<li> <b>{{experiencia.vinculo}}</b> 
+							{{experiencia.detalhe}}
+					</li>
+				</ul>
+            </div>
+			
+			</br>
+			<h4 class="mb-3">Habilidades</h4>
+            <div class="mb-3">
+				<div class="sub">
+					<h6>Conhecimentos:</h6>
+					<ul ng-repeat="conhecimento in conhecimentos">
+						<li> {{conhecimento.nome}}</li>
+					</ul>
+					<h6>Idiomas:</h6>
+					<ul ng-repeat="idioma in idiomas">
+						<li> {{idioma.nome}}, {{idioma.nivel}}</li>
+					</ul>
+				</div>
+            </div>
+        </div>
+      </div>	  
+	  
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+				<a href="https://github.com/RobertoEwig">
+					<img src="media/git.ico" alt="GitHub" height="45" width="45">
+				</a>
+			
+				<a href="https://www.facebook.com.br/Roberto.Ewig">
+					<img src="media/face.ico" alt="Facebook" height="32" width="32">
+				</a>
+		<p class="mb-1">&copy; 2018 Roberto R. Américo</p>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+	
+	<!-- Angular -->
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="angular/app.js"></script>
+		
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    
+  </body>
+</html>
